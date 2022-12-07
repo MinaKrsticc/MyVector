@@ -1,10 +1,10 @@
-#project(MyString)
-#cmake_minimum_required(VERSION 3.2)
+# create library " libtools "
+add_library (myArray my_array.cpp)
+add_library (myString my_string.cpp)
+add_library (myVector my_vector.cpp)
+# add executable main
+add_executable (main main.cpp)
+# tell the linker to bind these objects together
+target_link_libraries (main myString myArray myVector)
 
-message(STATUS "!!!!!!!!!!! $[PROJECT_SORCE_DIR]")
-
-#include_directories (${PROJECT_SOURCE_DIR}/MyString)
-
-add_subdirectory (MyString)
-enable_testing ()
-
+enable_testing()
